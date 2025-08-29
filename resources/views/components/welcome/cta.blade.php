@@ -1,13 +1,14 @@
-<section class="py-12 sm:py-20 bg-gradient-to-r from-blue-600 to-blue-700">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
-            {{ __('welcome.cta.title') }}
-        </h2>
-        <p class="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 px-4">
-            {{ __('welcome.cta.subtitle') }}
-        </p>
-        <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all transform hover:scale-105 shadow-lg inline-block">
-            {{ __('welcome.cta.button') }}
-        </a>
-    </div>
+<section class="bg-gradient-to-r from-blue-600 to-blue-700 py-12 sm:py-20">
+  <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+    <h2 class="mb-4 px-4 text-3xl font-bold text-white sm:mb-6 sm:text-4xl md:text-5xl">
+      {{ __('welcome.cta.title') }}
+    </h2>
+    <p class="mb-6 px-4 text-lg text-blue-100 sm:mb-8 sm:text-xl">{{ __('welcome.cta.subtitle') }}</p>
+    <a
+      href="{{ route('register') }}"
+      class="inline-block transform rounded-xl bg-white px-6 py-3 text-base font-semibold text-blue-600 shadow-lg transition-all hover:scale-105 hover:bg-gray-100 sm:px-8 sm:py-4 sm:text-lg"
+    >
+      {{ __('welcome.cta.button') }}
+    </a>
+  </div>
 </section>

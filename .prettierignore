@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build files
+public/build/
+storage/
+
+# Cache
+bootstrap/cache/
+storage/framework/cache/
+
+# Logs
+storage/logs/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Laravel specific
+composer.lock
+package-lock.json
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Compiled assets
+*.min.js
+*.min.css
+
+# Generated files
+*.generated.php
