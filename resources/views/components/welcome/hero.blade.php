@@ -1,5 +1,4 @@
 <section class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Animated Stars Background -->
     <div class="absolute inset-0 pointer-events-none">
         <div class="sky-container absolute w-full h-full transform rotate-45">
             <span class="star"></span>
@@ -24,7 +23,7 @@
                     </span>
                     {{ __('welcome.hero.title_suffix') }}
                 </h1>
-                
+
                 <p class="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto px-4">
                     {{ __('welcome.hero.subtitle') }}
                 </p>
