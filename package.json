@@ -8,6 +8,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write . --ignore-unknown",
+    "lint": "./vendor/bin/duster fix && prettier --write .",
+    "lint:check": "./vendor/bin/duster check && prettier --check .",
     "prepare": "husky"
   },
   "devDependencies": {
