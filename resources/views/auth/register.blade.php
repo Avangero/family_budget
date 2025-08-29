@@ -1,52 +1,59 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <div class="text-center mb-6 sm:mb-8">
+        <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+            {{ __('auth.register.title') }}
+        </h1>
+        <p class="text-gray-300 text-sm sm:text-base">
+            {{ __('auth.register.subtitle') }}
+        </p>
+    </div>
+
+    <form method="POST" action="{{ route('register') }}" class="space-y-4 sm:space-y-6">
         @csrf
 
-        <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-label for="name" :value="__('auth.register.name')" />
+            <x-text-input id="name" class="block mt-2 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+        <div>
+            <x-input-label for="email" :value="__('auth.register.email')" />
+            <x-text-input id="email" class="block mt-2 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
+        <div>
+            <x-input-label for="password" :value="__('auth.register.password')" />
+            <x-text-input id="password" class="block mt-2 w-full"
                             type="password"
                             name="password"
                             required autocomplete="new-password" />
-
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+        <div>
+            <x-input-label for="password_confirmation" :value="__('auth.register.confirm_password')" />
+            <x-text-input id="password_confirmation" class="block mt-2 w-full"
                             type="password"
                             name="password_confirmation" required autocomplete="new-password" />
-
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
+        <div class="pt-2 sm:pt-4">
+            <x-primary-button>
+                {{ __('auth.register.register_button') }}
             </x-primary-button>
+        </div>
+
+        <div class="text-center pt-4 sm:pt-6 border-t border-gray-700">
+            <p class="text-sm text-gray-300">
+                {{ __('auth.register.already_registered') }}
+                <a href="{{ route('login') }}" class="text-blue-400 hover:text-blue-300 transition-colors font-medium">
+                    {{ __('auth.register.login_link') }}
+                </a>
+            </p>
         </div>
     </form>
 </x-guest-layout>
+
