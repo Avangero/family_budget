@@ -27,3 +27,4 @@
         </div>
     </div>
 </x-app-layout>
+{{-- Test comment for husky blade-formatter --}}
