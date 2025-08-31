@@ -1,41 +1,43 @@
 <x-guest-layout>
-    <div class="text-center mb-6 sm:mb-8">
-        <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+    <div class="mb-6 text-center sm:mb-8">
+        <h1 class="mb-2 text-2xl font-bold text-white sm:text-3xl">
             {{ __('auth.login.title') }}
         </h1>
-        <p class="text-gray-300 text-sm sm:text-base">
+        <p class="text-sm text-gray-300 sm:text-base">
             {{ __('auth.login.subtitle') }}
         </p>
     </div>
 
-    <x-auth-session-status class="mb-6" :status="session('status')" />
+    <x-auth-session-status :status="session('status')" class="mb-6" />
 
-    <form method="POST" action="{{ route('login') }}" class="space-y-4 sm:space-y-6">
+    <form action="{{ route('login') }}" class="space-y-4 sm:space-y-6" method="POST">
         @csrf
 
         <div>
-            <x-input-label for="email" :value="__('auth.login.email')" />
-            <x-text-input id="email" class="block mt-2 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-label :value="__('auth.login.email')" for="email" />
+            <x-text-input :value="old('email')" autocomplete="username" autofocus class="mt-2 block w-full" id="email"
+                name="email" required type="email" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <div>
-            <x-input-label for="password" :value="__('auth.login.password')" />
-            <x-text-input id="password" class="block mt-2 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <x-input-label :value="__('auth.login.password')" for="password" />
+            <x-text-input autocomplete="current-password" class="mt-2 block w-full" id="password" name="password"
+                required type="password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-between">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded bg-gray-800 border-gray-700 text-blue-500 focus:ring-blue-500 focus:ring-offset-gray-800" name="remember">
+            <label class="inline-flex items-center" for="remember_me">
+                <input
+                    class="rounded border-gray-700 bg-gray-800 text-blue-500 focus:ring-blue-500 focus:ring-offset-gray-800"
+                    id="remember_me" name="remember" type="checkbox">
                 <span class="ms-2 text-sm text-gray-300">{{ __('auth.login.remember_me') }}</span>
             </label>
 
             @if (Route::has('password.request'))
-                <a class="text-sm text-gray-300 hover:text-white transition-colors" href="{{ route('password.request') }}">
+                <a class="text-sm text-gray-300 transition-colors hover:text-white"
+                    href="{{ route('password.request') }}">
                     {{ __('auth.login.forgot_password') }}
                 </a>
             @endif
@@ -47,10 +49,11 @@
             </x-primary-button>
         </div>
 
-        <div class="text-center pt-4 sm:pt-6 border-t border-gray-700">
+        <div class="border-t border-gray-700 pt-4 text-center sm:pt-6">
             <p class="text-sm text-gray-300">
                 {{ __('auth.login.no_account') }}
-                <a href="{{ route('register') }}" class="text-blue-400 hover:text-blue-300 transition-colors font-medium">
+                <a class="font-medium text-blue-400 transition-colors hover:text-blue-300"
+                    href="{{ route('register') }}">
                     {{ __('auth.login.register_link') }}
                 </a>
             </p>

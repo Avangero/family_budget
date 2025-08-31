@@ -1,35 +1,36 @@
 <x-guest-layout>
-    <div class="text-center mb-6 sm:mb-8">
-        <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+    <div class="mb-6 text-center sm:mb-8">
+        <h1 class="mb-2 text-2xl font-bold text-white sm:text-3xl">
             {{ __('auth.password.reset.title') }}
         </h1>
-        <p class="text-gray-300 text-sm sm:text-base">
+        <p class="text-sm text-gray-300 sm:text-base">
             {{ __('auth.password.reset.subtitle') }}
         </p>
     </div>
 
-    <form method="POST" action="{{ route('password.store') }}" class="space-y-4 sm:space-y-6">
+    <form action="{{ route('password.store') }}" class="space-y-4 sm:space-y-6" method="POST">
         @csrf
 
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+        <input name="token" type="hidden" value="{{ $request->route('token') }}">
 
         <div>
-            <x-input-label for="email" :value="__('auth.password.reset.email')" />
-            <x-text-input id="email" class="block mt-2 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
+            <x-input-label :value="__('auth.password.reset.email')" for="email" />
+            <x-text-input :value="old('email', $request->email)" autocomplete="username" autofocus class="mt-2 block w-full" id="email"
+                name="email" required type="email" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <div>
-            <x-input-label for="password" :value="__('auth.password.reset.password')" />
-            <x-text-input id="password" class="block mt-2 w-full" type="password" name="password" required autocomplete="new-password" />
+            <x-input-label :value="__('auth.password.reset.password')" for="password" />
+            <x-text-input autocomplete="new-password" class="mt-2 block w-full" id="password" name="password" required
+                type="password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <div>
-            <x-input-label for="password_confirmation" :value="__('auth.password.reset.confirm_password')" />
-            <x-text-input id="password_confirmation" class="block mt-2 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
+            <x-input-label :value="__('auth.password.reset.confirm_password')" for="password_confirmation" />
+            <x-text-input autocomplete="new-password" class="mt-2 block w-full" id="password_confirmation"
+                name="password_confirmation" required type="password" />
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
@@ -39,9 +40,9 @@
             </x-primary-button>
         </div>
 
-        <div class="text-center pt-4 sm:pt-6 border-t border-gray-700">
+        <div class="border-t border-gray-700 pt-4 text-center sm:pt-6">
             <p class="text-sm text-gray-300">
-                <a href="{{ route('login') }}" class="text-blue-400 hover:text-blue-300 transition-colors font-medium">
+                <a class="font-medium text-blue-400 transition-colors hover:text-blue-300" href="{{ route('login') }}">
                     ← {{ __('auth.login.login_button') }}
                 </a>
             </p>

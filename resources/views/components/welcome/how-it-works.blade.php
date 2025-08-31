@@ -27,7 +27,7 @@
                 <h3 class="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 px-2">{{ __('welcome.how_it_works.steps.categories.title') }}</h3>
                 <p class="text-gray-300 text-sm sm:text-base px-2">{{ __('welcome.how_it_works.steps.categories.description') }}</p>
             </div>
-            
+
             <div class="text-center">
                 <div class="w-16 h-16 sm:w-20 sm:h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-white font-bold text-xl sm:text-2xl">4</div>
                 <h3 class="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 px-2">{{ __('welcome.how_it_works.steps.track.title') }}</h3>
