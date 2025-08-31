@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ __('welcome.title') }}</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ __('welcome.title') }}</title>
 
-    <link rel="preconnect" href="https://fonts.bunny.net" />
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
 
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-  </head>
-  <body class="bg-gray-900 font-sans text-white antialiased">
-    <x-welcome.navigation />
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased bg-gray-900 text-white">
+        <x-welcome.navigation />
 
-    <x-welcome.hero />
+        <x-welcome.hero />
 
-    <x-welcome.features />
+        <x-welcome.features />
 
-    <x-welcome.how-it-works />
+        <x-welcome.how-it-works />
 
-    <x-welcome.cta />
+        <x-welcome.cta />
 
-    <x-welcome.footer />
-  </body>
+        <x-welcome.footer />
+    </body>
 </html>
